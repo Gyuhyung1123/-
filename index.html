@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8" />
+    <title>수학 공식 정리</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- MathJax (수식 렌더링) -->
+    <script>
+        window.MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']],
+                displayMath: [['$$', '$$'], ['\\[', '\\]']]
+            },
+            svg: { fontCache: 'global' }
+        };
+    </script>
+    <script id="MathJax-script" async
+        src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js">
+    </script>
+
+    <!-- 간단 스타일 -->
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: -apple-system, BlinkMacSystemFont,"Segoe UI",sans-serif;
+            background: #f5f7fb;
+            line-height: 1.6;
+        }
+
+        header {
+            background: #1f2937;
+            color: #ffffff;
+            padding: 24px 16px;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 1.8rem;
+        }
+
+        header p {
+            margin: 8px 0 0;
+            font-size: 0.95rem;
+            opacity: 0.9;
+        }
+
+        main {
+            max-width: 960px;
+            margin: 24px auto 40px;
+            padding: 0 16px;
+        }
+
+        .card {
+            background: #ffffff;
+            border-radius: 12px;
+            padding: 20px 20px 16px;
+            margin-bottom: 16px;
+            box-shadow: 0 8px 18px rgba(15, 23, 42, 0.06);
+        }
+
+        .card h2 {
+            margin-top: 0;
+            margin-bottom: 8px;
+            font-size: 1.2rem;
+        }
+
+        .tag {
+            display: inline-block;
+            padding: 2px 8px;
+            font-size: 0.75rem;
+            border-radius: 999px;
+            background: #e5e7eb;
+            margin-bottom: 10px;
+        }
+
+        .formula-block {
+            background: #f9fafb;
+            border-radius: 10px;
+            padding: 10px 14px;
+            margin: 6px 0 10px;
+            overflow-x: auto;
+        }
+
+        .formula-title {
+            font-weight: 600;
+            margin-top: 8px;
+            margin-bottom: 4px;
+        }
+
+        .note {
+            font-size: 0.85rem;
+            color: #6b7280;
+        }
+
+        footer {
+            text-align: center;
+            font-size: 0.8rem;
+            color: #6b7280;
+            padding: 16px 0 24px;
+        }
+
+        @media (max-width: 600px) {
+            header h1 {
+                font-size: 1.4rem;
+            }
+            .card {
+                padding: 16px 14px 12px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>수학 공식 정리</h1>
+        <p>시험 직전에 훑어보는 핵심 공식 모음 (고등수학 + 대학미적분)</p>
+    </header>
+
+    <main>
+        <!-- 1. 기본식 -->
+        <section class="card">
+            <div class="tag">기본 공식</div>
+            <h2>1. 일차식 / 이차식 / 기본 항등식</h2>
+
+            <div class="formula-title">직선의 일반형 / 기울기</div>
+            <div class="formula-block">
+                $$ ax + by + c = 0 \quad (a,b \neq 0) $$
+                $$ y = mx + n \quad \Rightarrow \quad \text{기울기 } m = \frac{y_2 - y_1}{x_2 - x_1} $$
+            </div>
+
+            <div class="formula-title">이차방정식의 해 (근의 공식)</div>
+            <div class="formula-block">
+                $$ ax^{2} + bx + c = 0 \quad (a \neq 0) $$
+                $$ x = \frac{-b \pm \sqrt{b^{2} - 4ac}}{2a} $$
+                $$ \Delta = b^{2} - 4ac \quad (\text{판별식}) $$
+            </div>
+
+            <div class="formula-title">완전제곱식 / 이차식 완전제곱</div>
+            <div class="formula-block">
+                $$ (a \pm b)^{2} = a^{2} \pm 2ab + b^{2} $$
+                $$ ax^{2} + bx + c = a\left(x + \frac{b}{2a}\right)^{2} + \left(c - \frac{b^{2}}{4a}\right) $$
+            </div>
+
+            <div class="formula-title">등차수열 / 등비수열의 합</div>
+            <div class="formula-block">
+                $$ S_n^{(\text{등차})} = \frac{n}{2} \big(2a_1 + (n-1)d\big) $$
+                $$ S_n^{(\text{등비})} = a_1 \frac{1-r^{n}}{1-r} \quad (r \neq 1) $$
+            </div>
+        </section>
+
+        <!-- 2. 미적분 기초 -->
+        <section class="card">
+            <div class="tag">미적분</div>
+            <h2>2. 도함수 / 적분 기본 공식</h2>
+
+            <div class="formula-title">거듭제곱 함수의 미분</div>
+            <div class="formula-block">
+                $$ \frac{d}{dx} x^{n} = n x^{n-1} $$
+                (단, $n$은 상수)
+            </div>
+
+            <div class="formula-title">지수, 로그 함수의 미분</div>
+            <div class="formula-block">
+                $$ \frac{d}{dx} e^{x} = e^{x} $$
+                $$ \frac{d}{dx} a^{x} = a^{x} \ln a $$
+                $$ \frac{d}{dx} \ln x = \frac{1}{x} \quad (x &gt; 0) $$
+            </div>
+
+            <div class="formula-title">기본 적분 공식</div>
+            <div class="formula-block">
+                $$ \int x^{n} \, dx = \frac{x^{n+1}}{n+1} + C \quad (n \neq -1) $$
+                $$ \int \frac{1}{x} \, dx = \ln|x| + C $$
+                $$ \int e^{x} \, dx = e^{x} + C $$
+            </div>
+
+            <div class="formula-title">삼각함수의 미분</div>
+            <div class="formula-block">
+                $$ \frac{d}{dx}\sin x = \cos x,\quad \frac{d}{dx}\cos x = -\sin x $$
+                $$ \frac{d}{dx}\tan x = \sec^{2}x $$
+            </div>
+        </section>
+
+        <!-- 3. 대학미적분 -->
+        <section class="card">
+            <div class="tag">대학미적분</div>
+            <h2>3. 대학미적분 핵심 공식</h2>
+
+            <div class="formula-title">극한과 연속 (ε-δ 정의 느낌만 기억)</div>
+            <div class="formula-block">
+                $$ \lim_{x \to a} f(x) = L \quad \Longleftrightarrow \quad
+                \forall \varepsilon &gt; 0,\ \exists \delta &gt; 0\ \text{s.t.}\ 0 &lt; |x-a| &lt; \delta \Rightarrow |f(x)-L| &lt; \varepsilon $$
+                $$ \text{연속} \quad \iff \quad \lim_{x \to a} f(x) = f(a) $$
+            </div>
+
+            <div class="formula-title">미분의 정의</div>
+            <div class="formula-block">
+                $$ f'(a) = \lim_{h \to 0} \frac{f(a+h) - f(a)}{h} $$
+                $$ f'(x) = \lim_{h \to 0} \frac{f(x+h) - f(x)}{h} $$
+            </div>
+
+            <div class="formula-title">곱의 미분 / 몫의 미분</div>
+            <div class="formula-block">
+                $$ (fg)'(x) = f'(x)g(x) + f(x)g'(x) $$
+                $$ \left( \frac{f}{g} \right)'(x) = \frac{f'(x)g(x) - f(x)g'(x)}{[g(x)]^{2}} \quad (g(x) \neq 0) $$
+            </div>
+
+            <div class="formula-title">합성함수 (연쇄법칙, Chain Rule)</div>
+            <div class="formula-block">
+                $$ (f \circ g)'(x) = f'(g(x)) \cdot g'(x) $$
+                예) $y = \sin(x^{2})$ 일 때  
+                $$ y' = \cos(x^{2}) \cdot 2x $$
+            </div>
+
+            <div class="formula-title">평균값 정리 (Mean Value Theorem)</div>
+            <div class="formula-block">
+                $$ f \text{가 } [a,b] \text{에서 연속, } (a,b) \text{에서 미분 가능} \Rightarrow $$
+                $$ \exists c \in (a,b) \text{ s.t. } f'(c) = \frac{f(b) - f(a)}{b - a} $$
+            </div>
+
+            <div class="formula-title">부분적분 (Integration by Parts)</div>
+            <div class="formula-block">
+                $$ \int u \, dv = uv - \int v \, du $$
+                예) $\int x e^{x} dx$  
+                $$ u = x,\ dv = e^{x}dx \Rightarrow du = dx,\ v = e^{x} $$
+                $$ \int x e^{x} dx = x e^{x} - \int e^{x} dx = x e^{x} - e^{x} + C $$
+            </div>
+
+            <div class="formula-title">미적분학의 기본정리</div>
+            <div class="formula-block">
+                $$ F'(x) = f(x) \Rightarrow \int_{a}^{b} f(x)\,dx = F(b) - F(a) $$
+                $$ F(x) = \int_{a}^{x} f(t)\,dt \Rightarrow F'(x) = f(x) $$
+            </div>
+
+            <div class="formula-title">테일러 전개 (Taylor Expansion, 2차까지)</div>
+            <div class="formula-block">
+                $$ f(x) \approx f(a) + f'(a)(x-a) + \frac{f''(a)}{2}(x-a)^{2} $$
+                근사, 에러 분석에 자주 사용.
+            </div>
+
+            <div class="formula-title">다변수 함수의 편미분 / 기울기</div>
+            <div class="formula-block">
+                $$ \frac{\partial f}{\partial x} = f_{x}(x,y), \quad \frac{\partial f}{\partial y} = f_{y}(x,y) $$
+                $$ \nabla f(x,y) = \left( \frac{\partial f}{\partial x}, \frac{\partial f}{\partial y} \right) $$
+            </div>
+
+            <div class="formula-title">2중적분의 기본형</div>
+            <div class="formula-block">
+                $$ \iint_{R} f(x,y)\, dA = \int_{a}^{b} \int_{g_{1}(x)}^{g_{2}(x)} f(x,y)\, dy\, dx $$
+                (영역 $R$을 x-고정, y-변수로 적분하는 형태)
+            </div>
+
+            <p class="note">
+                ※ 보다 엄밀한 정리는 교재 참고 바람
+            </p>
+        </section>
+
+        <!-- 4. 삼각함수 -->
+        <section class="card">
+            <div class="tag">삼각함수</div>
+            <h2>4. 삼각함수 기본 관계</h2>
+
+            <div class="formula-title">피타고라스 항등식</div>
+            <div class="formula-block">
+                $$ \sin^{2}\theta + \cos^{2}\theta = 1 $$
+                $$ 1 + \tan^{2}\theta = \sec^{2}\theta $$
+            </div>
+
+            <div class="formula-title">탄젠트 정의</div>
+            <div class="formula-block">
+                $$ \tan\theta = \frac{\sin\theta}{\cos\theta} \quad (\cos\theta \neq 0) $$
+            </div>
+
+            <div class="formula-title">덧셈 정리</div>
+            <div class="formula-block">
+                $$ \sin(\alpha + \beta) = \sin\alpha \cos\beta + \cos\alpha \sin\beta $$
+                $$ \cos(\alpha + \beta) = \cos\alpha \cos\beta - \sin\alpha \sin\beta $$
+            </div>
+
+            <div class="formula-title">배각 공식</div>
+            <div class="formula-block">
+                $$ \sin 2\theta = 2\sin\theta \cos\theta $$
+                $$ \cos 2\theta = \cos^{2}\theta - \sin^{2}\theta
+                = 2\cos^{2}\theta - 1
+                = 1 - 2\sin^{2}\theta $$
+            </div>
+        </section>
+
+        <!-- 5. 확률·통계 -->
+        <section class="card">
+            <div class="tag">확률·통계</div>
+            <h2>5. 확률과 조합</h2>
+
+            <div class="formula-title">순열 / 조합</div>
+            <div class="formula-block">
+                $$ {}_{n}P_{r} = \frac{n!}{(n-r)!} $$
+                $$ {}_{n}C_{r} = \frac{n!}{r!(n-r)!} $$
+            </div>
+
+            <div class="formula-title">기댓값 (이산 확률변수)</div>
+            <div class="formula-block">
+                $$ E(X) = \sum_{i} x_{i} \, P(X = x_{i}) $$
+            </div>
+
+            <div class="formula-title">분산</div>
+            <div class="formula-block">
+                $$ \mathrm{Var}(X) = E\big[(X - \mu)^{2}\big] = E(X^{2}) - \mu^{2},\quad \mu = E(X) $$
+            </div>
+
+            <div class="formula-title">정규분포 표기</div>
+            <div class="formula-block">
+                $$ X \sim N(\mu, \sigma^{2}) $$
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        수학 공식 정리 페이지 · GitHub Pages 과제용
+    </footer>
+</body>
+</html>
