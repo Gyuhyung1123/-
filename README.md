@@ -11,7 +11,7 @@
 
 ## 🔗 배포 페이지(URL)
 
-> https://YOUR-ID.github.io/YOUR-REPO  
+> https://gyuhyung1123.github.io/-/ 
 (*형의 실제 주소로 바꿔넣기*)
 
 ---
